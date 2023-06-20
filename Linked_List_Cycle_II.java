@@ -26,18 +26,34 @@ import javax.xml.crypto.Data;
 
 
 public class Linked_List_Cycle_II {
-    public static Node firstNode(Node head) {
-          List<Node> arr = new ArrayList<>();
+    // public static Node firstNode(Node head) {
+    //       List<Node> arr = new ArrayList<>();
 
-        Node curr =head;
-        while(curr != null){
-            if(arr.contains(curr)){
-                return curr;
+    //     Node curr =head;
+    //     while(curr != null){
+    //         if(arr.contains(curr)){
+    //             return curr;
+    //         }
+    //         arr.add(curr);
+    //         curr = curr.next;
+    //     }
+    //     return curr;
+
+    // }
+    public class Solution {
+	public static int removeDuplicates(ArrayList<Integer> arr,int n) {
+		List<Integer> newList = new ArrayList<>();
+  
+        for (int element : arr) {
+          
+            if (!newList.contains(element)) {
+  
+                newList.add(element);
             }
-            arr.add(curr);
-            curr = curr.next;
         }
-        return curr;
-
-    }
+  
+        
+        return newList.size();
+	}
+}
 }
